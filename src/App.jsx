@@ -7,6 +7,7 @@ import Services from "./pages/Services";
 import Doctors from "./pages/Doctors";
 import Appointments from "./pages/Appointments";
 import Blog from "./pages/Blog";
+import BlogDetails from "./pages/BlogDetails";
 import Contact from "./pages/Contact";
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
             <Route path="/doctors" element={<Doctors />} />
             <Route path="/appointments" element={<Appointments />} />
             <Route path="/blog" element={<Blog />} />
+            <Route path="/blog/:id" element={<BlogDetails />} />
             <Route path="/contact" element={<Contact />} />
           </Routes>
         </main>
