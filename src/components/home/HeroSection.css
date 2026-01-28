@@ -243,7 +243,7 @@
 /* Slide Indicators */
 .hero-indicators {
   position: absolute;
-  bottom: 3rem;
+  bottom: 5rem; /* Increased from 3rem to prevent overlap with floating stats */
   left: 50%;
   transform: translateX(-50%);
   display: flex;
