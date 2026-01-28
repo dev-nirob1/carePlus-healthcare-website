@@ -104,6 +104,23 @@
   font-weight: 800;
 }
 
+.learn-more-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: #0ea5e9;
+  text-decoration: none;
+  font-weight: 700;
+  margin-top: 1.5rem;
+  transition: all 0.3s ease;
+  width: fit-content;
+}
+
+.learn-more-btn:hover {
+  gap: 1.25rem;
+  color: #0284c7;
+}
+
 @media (max-width: 1024px) {
   .service-item {
     grid-template-columns: 1fr;

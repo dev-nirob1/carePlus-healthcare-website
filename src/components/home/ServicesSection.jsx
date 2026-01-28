@@ -1,61 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import {
-  FaHeartbeat,
-  FaBrain,
-  FaBaby,
-  FaTooth,
-  FaEye,
-  FaStethoscope,
-} from "react-icons/fa";
+import { servicesData } from "../../data/servicesData";
 import "./ServicesSection.css";
 
-const services = [
-  {
-    icon: <FaHeartbeat />,
-    title: "Cardiology",
-    description:
-      "Comprehensive care for your heart with advanced diagnostics and treatment plans.",
-    link: "/services/cardiology",
-  },
-  {
-    icon: <FaBrain />,
-    title: "Neurology",
-    description:
-      "Expert care for disorders of the nervous system, brain, and spinal cord.",
-    link: "/services/neurology",
-  },
-  {
-    icon: <FaBaby />,
-    title: "Pediatrics",
-    description:
-      "Specialized healthcare for infants, children, and adolescents.",
-    link: "/services/pediatrics",
-  },
-  {
-    icon: <FaTooth />,
-    title: "Dental Care",
-    description:
-      "Complete oral health services including cosmetic and surgical dentistry.",
-    link: "/services/dental",
-  },
-  {
-    icon: <FaEye />,
-    title: "Ophthalmology",
-    description:
-      "Advanced eye care services from routine exams to complex surgeries.",
-    link: "/services/ophthalmology",
-  },
-  {
-    icon: <FaStethoscope />,
-    title: "General Medicine",
-    description:
-      "Primary care services for the prevention, diagnosis, and treatment of adult diseases.",
-    link: "/services/general",
-  },
-];
-
 function ServicesSection() {
+  // Take first 6 services for the homepage preview
+  const featuredServices = servicesData.slice(0, 6);
+
   return (
     <section className="services-section">
       <div className="services-container">
@@ -69,13 +20,13 @@ function ServicesSection() {
         </div>
 
         <div className="services-grid">
-          {services.map((service, index) => (
+          {featuredServices.map((service, index) => (
             <div className="service-card" key={index}>
               <div className="service-icon">{service.icon}</div>
               <div className="service-content">
                 <h3>{service.title}</h3>
-                <p>{service.description}</p>
-                <Link to={service.link} className="service-link">
+                <p>{service.shortDescription}</p>
+                <Link to={`/services/${service.slug}`} className="service-link">
                   Learn More <span>&rarr;</span>
                 </Link>
               </div>

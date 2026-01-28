@@ -1,0 +1,147 @@
+.service-details-section {
+  padding: 5rem 1rem;
+  background-color: #f8fafc;
+}
+
+.service-details-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+/* Left Content */
+.service-main-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.service-intro h1 {
+  font-size: 2.5rem;
+  color: #0f172a;
+  margin-bottom: 1.5rem;
+  font-weight: 800;
+}
+
+.service-intro p {
+  font-size: 1.15rem;
+  color: #64748b;
+  line-height: 1.8;
+}
+
+.service-features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.service-feature-item {
+  background: white;
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+  border: 1px solid #f1f5f9;
+}
+
+.service-feature-item:hover {
+  transform: translateY(-5px);
+  border-color: #0ea5e9;
+}
+
+.service-feature-item h3 {
+  color: #0f172a;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  font-size: 1.25rem;
+}
+
+.service-feature-item p {
+  color: #64748b;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Right Sidebar */
+.service-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  position: sticky;
+  top: 100px;
+}
+
+.service-sidebar-image {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 24px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.service-cta-card {
+  background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%);
+  padding: 2.5rem;
+  border-radius: 24px;
+  color: white;
+}
+
+.service-cta-card h2 {
+  font-size: 1.75rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.service-cta-card p {
+  opacity: 0.9;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.book-btn-white {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  background: white;
+  color: #0ea5e9;
+  padding: 1rem 2rem;
+  border-radius: 12px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+.book-btn-white:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  background: #f0f9ff;
+}
+
+.more-services-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  color: #64748b;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+.more-services-link:hover {
+  color: #0ea5e9;
+}
+
+@media (max-width: 1024px) {
+  .service-details-container {
+    grid-template-columns: 1fr;
+  }
+
+  .service-sidebar {
+    position: static;
+  }
+}
