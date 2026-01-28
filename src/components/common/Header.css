@@ -1,34 +1,174 @@
+/* Base Header Styles */
 .header {
-  background-color: #ffffff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  padding: 1rem 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 0.75rem 0;
+}
+
+/* Glassmorphism & Floating Effect for Large Screens */
+@media (min-width: 1024px) {
+  .header {
+    top: 1.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 1280px;
+    background: rgba(255, 255, 255, 0.85); /* Slightly more opaque for better readability */
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 9999px; /* Pill shape */
+    box-shadow: 
+      0 4px 6px -1px rgba(0, 0, 0, 0.05), 
+      0 10px 15px -3px rgba(0, 0, 0, 0.05),
+      0 0 0 1px rgba(255, 255, 255, 0.5) inset; /* Subtle inner border */
+    padding: 0.75rem 2rem;
+  }
+}
+
+/* Mobile/Tablet Fallback (Full Width) */
+@media (max-width: 1023px) {
+  .header {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  }
 }
 
 .header-content {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
+  width: 100%;
 }
 
 .logo a {
   font-size: 1.5rem;
-  font-weight: bold;
-  color: #0ea5e9;
+  font-weight: 800;
+  background: linear-gradient(135deg, #0284c7 0%, #2563eb 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
   text-decoration: none;
+  letter-spacing: -0.025em;
+  display: flex;
+  align-items: center;
 }
 
+/* Desktop Navigation */
 .navigation {
   display: flex;
-  gap: 2rem;
+  gap: 1.5rem; /* Reduced from 2.5rem as requested */
+  align-items: center;
 }
 
 .navigation a {
   text-decoration: none;
-  color: #1e293b;
-  font-weight: 500;
-  transition: color 0.3s ease;
+  color: #64748b;
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 0.6rem 1.2rem;
+  border-radius: 9999px;
+  transition: all 0.3s ease;
+  position: relative;
+  letter-spacing: 0.01em;
 }
 
+/* Removing old underline effect */
+.navigation a::after {
+  display: none;
+}
+
+/* "Pill" Hover Effect */
 .navigation a:hover {
   color: #0ea5e9;
+  background: rgba(14, 165, 233, 0.08); /* Light blue background */
+}
+
+/* Active State (optional, if router provides active class, otherwise uses hover style) */
+.navigation a.active {
+  color: #0284c7;
+  background: rgba(14, 165, 233, 0.12);
+}
+
+/* CTA Button Style for 'Contact' */
+.navigation a[href='/contact'] {
+  background: #0ea5e9;
+  color: white;
+  box-shadow: 0 4px 6px -1px rgba(14, 165, 233, 0.3);
+}
+
+.navigation a[href='/contact']:hover {
+  background: #0284c7;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 8px -1px rgba(14, 165, 233, 0.4);
+}
+
+/* Mobile Toggle Button */
+.mobile-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  z-index: 50;
+  color: #334155;
+  transition: color 0.2s;
+}
+
+.mobile-toggle:hover {
+  color: #0ea5e9;
+}
+
+/* Responsive Styles */
+@media (max-width: 1023px) { /* Changed breakpoint to match floating logic */
+  .mobile-toggle {
+    display: block;
+  }
+
+  .navigation {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 80%;
+    max-width: 300px;
+    height: 100vh;
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    flex-direction: column;
+    padding: 6rem 2rem 2rem;
+    gap: 1rem;
+    transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.1);
+    align-items: stretch; /* Stretch items to fill width */
+    z-index: 999;
+  }
+
+  .navigation.open {
+    right: 0;
+  }
+
+  .navigation a {
+    font-size: 1.1rem;
+    padding: 1rem;
+    border-radius: 12px;
+    width: 100%;
+    text-align: center;
+  }
+  
+  .navigation a:hover {
+    background: #f1f5f9;
+  }
+
+  .navigation a[href='/contact'] {
+    margin-top: 1rem;
+    background: #0ea5e9;
+    color: white;
+  }
 }
