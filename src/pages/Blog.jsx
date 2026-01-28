@@ -1,8 +1,21 @@
+import React, { useEffect } from "react";
+import PageHero from "../components/common/PageHero";
+import BlogGrid from "../components/blog/BlogGrid";
+
 function Blog() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    document.title = "Health Blog | CarePlus Clinic";
+  }, []);
+
   return (
     <div className="blog-page">
-      <h1>Health Blog</h1>
-      <p>Read our latest health articles</p>
+      <PageHero
+        title="Our Health Blog"
+        bgImage="https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?q=80&w=2600&auto=format&fit=crop"
+        pageTitle="Blog"
+      />
+      <BlogGrid />
     </div>
   );
 }
