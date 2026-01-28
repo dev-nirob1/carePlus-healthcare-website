@@ -3,6 +3,7 @@ import StatsSection from "../components/home/StatsSection";
 import ServicesSection from "../components/home/ServicesSection";
 import DoctorsSection from "../components/home/DoctorsSection";
 import TestimonialsSection from "../components/home/TestimonialsSection";
+import ServiceCTA from "../components/services/ServiceCTA";
 import "./Home.css";
 
 function Home() {
@@ -13,6 +14,7 @@ function Home() {
       <ServicesSection />
       <DoctorsSection />
       <TestimonialsSection />
+      <ServiceCTA />
     </div>
   );
 }
