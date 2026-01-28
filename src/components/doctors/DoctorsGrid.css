@@ -1,0 +1,174 @@
+.doctors-grid-section {
+  padding: 5rem 1rem;
+  background-color: #f8fafc;
+}
+
+.doctors-grid-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Filter Controls */
+.filter-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 4rem;
+}
+
+.filter-btn {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  background: white;
+  color: #64748b;
+  font-weight: 600;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  font-size: 0.95rem;
+}
+
+.filter-btn:hover {
+  transform: translateY(-2px);
+  color: #0ea5e9;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.filter-btn.active {
+  background: #0ea5e9;
+  color: white;
+  box-shadow: 0 10px 25px -5px rgba(14, 165, 233, 0.4);
+}
+
+/* Grid Layout */
+.doctors-grid-full {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2.5rem;
+}
+
+/* Doctor Card (Enhanced) */
+.doctor-card-enhanced {
+  background: white;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  transition: all 0.4s ease;
+  position: relative;
+  border: 1px solid #f1f5f9;
+}
+
+.doctor-card-enhanced:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(14, 165, 233, 0.15);
+}
+
+.doctor-image-wrapper {
+  position: relative;
+  height: 320px;
+  overflow: hidden;
+}
+
+.doctor-image-full {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.doctor-card-enhanced:hover .doctor-image-full {
+  transform: scale(1.05);
+}
+
+/* Overlay with Social Icons */
+.doctor-social-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, rgba(15, 23, 42, 0.8), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 2rem;
+}
+
+.doctor-card-enhanced:hover .doctor-social-overlay {
+  opacity: 1;
+}
+
+.social-links {
+  display: flex;
+  gap: 1rem;
+  transform: translateY(20px);
+  transition: transform 0.3s ease;
+}
+
+.doctor-card-enhanced:hover .social-links {
+  transform: translateY(0);
+}
+
+.social-icon {
+  width: 40px;
+  height: 40px;
+  background: white;
+  color: #0ea5e9;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s;
+}
+
+.social-icon:hover {
+  background: #0ea5e9;
+  color: white;
+}
+
+.doctor-info-enhanced {
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.doctor-name {
+  font-size: 1.25rem;
+  color: #0f172a;
+  margin-bottom: 0.25rem;
+  font-weight: 700;
+}
+
+.doctor-role {
+  color: #0ea5e9;
+  font-weight: 600;
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+}
+
+.book-btn-sm {
+  width: 100%;
+  padding: 0.75rem;
+  background: transparent;
+  border: 2px solid #e2e8f0;
+  color: #64748b;
+  border-radius: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.book-btn-sm:hover {
+  background: #0ea5e9;
+  border-color: #0ea5e9;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .doctors-grid-full {
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  }
+}
