@@ -1,0 +1,126 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: 1rem 0;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Mobile Default Styles */
+.header .mobile-toggle {
+  display: block;
+  background: none;
+  border: none;
+  color: var(--text-main-color);
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.header .navigation {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 80%;
+  height: 100vh;
+  background: var(--white-color);
+  flex-direction: column;
+  justify-content: center;
+  padding: 2rem;
+  transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: -10px 0 30px rgba(0, 0, 0, 0.05);
+}
+
+.header .navigation.open {
+  right: 0;
+}
+
+.header .nav-links {
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+.header .nav-links a {
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--text-main-color);
+  transition: color 0.3s ease;
+  padding: 0.5rem 0;
+}
+
+/* Desktop Overrides (min-width pattern) */
+@media (min-width: 992px) {
+  .header {
+    padding: 1.5rem 0;
+  }
+
+  .header.scrolled {
+    padding: 1rem 0;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    box-shadow: var(--box-shadow);
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  .header .mobile-toggle {
+    display: none;
+  }
+
+  .header .navigation {
+    position: static;
+    width: auto;
+    height: auto;
+    background: none;
+    flex-direction: row;
+    padding: 0;
+    box-shadow: none;
+  }
+
+  .header .nav-links {
+    flex-direction: row;
+    margin-bottom: 0;
+  }
+
+  .header .nav-links a {
+    font-size: 1rem;
+    position: relative;
+  }
+
+  .header .nav-links a::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--primary-color);
+    transition: width 0.3s ease;
+  }
+
+  .header .nav-links a:hover::after,
+  .header .nav-links a.active::after {
+    width: 100%;
+  }
+
+  .header .nav-links a:hover,
+  .header .nav-links a.active {
+    color: var(--primary-color);
+  }
+}
+
+.logo-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  display: block;
+}
+
+.logo-text {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-main-color);
+  letter-spacing: -0.5px;
+}
