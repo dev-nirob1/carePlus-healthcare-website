@@ -1,0 +1,8 @@
+/* 
+  Doctors Section Minimal Styles
+  Layout is fully handled by `<div className="grid medium-2 large-4 gap-2">` 
+  and the SectionHeader/DoctorCard widgets. 
+*/
+.doctors-section {
+  padding: 5rem 0;
+}
