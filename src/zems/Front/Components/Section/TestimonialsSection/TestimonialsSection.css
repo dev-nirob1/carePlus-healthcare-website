@@ -1,0 +1,41 @@
+/* 
+  Testimonials Component Minimum Styles 
+  We use SwiperJS defaults and global utility classes for layout.
+  The only CSS needed here is overriding Swiper's pagination dots to match Lumina theme.
+*/
+.testimonials-section {
+  padding: 5rem 0;
+}
+
+/* Navigation Styles */
+.testimonials-carousel-wrapper .swiper-button-next,
+.testimonials-carousel-wrapper .swiper-button-prev {
+  color: var(--primary-color);
+  background: var(--white-color);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.testimonials-carousel-wrapper .swiper-button-next::after,
+.testimonials-carousel-wrapper .swiper-button-prev::after {
+  font-size: 1rem !important;
+  font-weight: bold;
+}
+
+.testimonials-carousel-wrapper .swiper-button-next {
+  right: -10px;
+}
+.testimonials-carousel-wrapper .swiper-button-prev {
+  left: -10px;
+}
+
+@media (max-width: 1024px) {
+  .testimonials-carousel-wrapper .swiper-button-next,
+  .testimonials-carousel-wrapper .swiper-button-prev {
+    display: none;
+  }
+}
