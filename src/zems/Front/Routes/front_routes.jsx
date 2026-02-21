@@ -5,8 +5,6 @@ import ServicesPage from "../Pages/ServicesPage";
 import ServiceDetailsPage from "../Pages/ServiceDetailsPage";
 import DoctorsPage from "../Pages/DoctorsPage";
 import AppointmentsPage from "../Pages/AppointmentsPage";
-import BlogPage from "../Pages/BlogPage";
-import BlogDetailsPage from "../Pages/BlogDetailsPage";
 import ContactPage from "../Pages/ContactPage";
 
 export const front_routes = [
@@ -20,8 +18,6 @@ export const front_routes = [
       { path: "services/:slug", element: <ServiceDetailsPage /> },
       { path: "doctors", element: <DoctorsPage /> },
       { path: "appointments", element: <AppointmentsPage /> },
-      { path: "blog", element: <BlogPage /> },
-      { path: "blog/:id", element: <BlogDetailsPage /> },
       { path: "contact", element: <ContactPage /> },
     ],
   },

@@ -10,15 +10,15 @@ html {
 :root {
   --font-family: "Outfit", sans-serif;
 
-  --primary-color: #0077b6; /* Vibrant Professional Blue */
-  --secondary-color: #00b4d8; /* Calming Cyan */
-  --accent-color: #48cae4; /* Soft Sky */
-  --background-color: #f8f9fa; /* Ultra Clean White */
+  --primary-color: #0c8ce9; /* Trustworthy Medical Blue */
+  --secondary-color: #0aa2c0; /* Clean Teal */
+  --accent-color: #e0f2fe; /* Soft Sky Blue (subtle backgrounds) */
+  --background-color: #ffffff; /* Ultra Clean White */
   --white-color: #ffffff;
-  --light-bg-color: #caf0f8; /* Fresh Light Blue (renamed) */
-  --text-main-color: #03045e; /* Deep Royal Navy */
-  --text-muted-color: #023e8a; /* Muted Professional Blue */
-  --border-color: #90e0ef; /* Soft Boundary */
+  --light-bg-color: #f8fafc; /* Very Soft Slate (for alternating sections) */
+  --text-main-color: #0f172a; /* Slate Navy (High contrast, modern) */
+  --text-muted-color: #64748b; /* Steel Gray (Secondary text) */
+  --border-color: #e2e8f0; /* Gentle Boundary */
 
   /* ---------------typography------------ */
   /* headings  */

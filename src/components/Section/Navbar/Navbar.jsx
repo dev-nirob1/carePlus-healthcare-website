@@ -87,14 +87,6 @@ function Navbar() {
               </ListItem>
               <ListItem>
                 <Link
-                  to="/blog"
-                  className={location.pathname === "/blog" ? "active" : ""}
-                >
-                  Blog
-                </Link>
-              </ListItem>
-              <ListItem>
-                <Link
                   to="/contact"
                   className={location.pathname === "/contact" ? "active" : ""}
                 >

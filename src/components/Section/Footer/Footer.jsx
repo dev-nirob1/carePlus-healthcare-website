@@ -45,7 +45,6 @@ function Footer() {
               <Link to="/about">About Us</Link>
               <Link to="/doctors">Our Doctors</Link>
               <Link to="/appointments">Book Appointment</Link>
-              <Link to="/blog">Health Blog</Link>
             </div>
           </div>
 
