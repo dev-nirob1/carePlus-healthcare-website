@@ -84,7 +84,7 @@ a {
 
 /* colors   */
 .bg-light {
-  background-color: rgb(from var(--primary-color) r g b / 5%);
+  background-color: rgb(from var(--primary-color) r g b / 3%);
 }
 .bg-primary {
   background-color: var(--primary-color);

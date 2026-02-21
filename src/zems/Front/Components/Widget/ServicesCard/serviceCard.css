@@ -1,0 +1,29 @@
+.service-card {
+  background: var(--white-color);
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow:
+    0 4px 6px -1px rgb(0 0 0 / 0.1),
+    0 2px 4px -2px rgb(0 0 0 / 0.1);
+  transition: all 0.3s ease-in-out;
+  font-weight: 500;
+}
+.service-card:hover {
+  transform: translateY(-5px);
+}
+.service-card .icon {
+  font-size: 2.25rem;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+.service-card a {
+  color: var(--primary-color);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: 0.2s ease-in-out;
+}
+.service-card a:hover {
+  gap: 1rem;
+}
