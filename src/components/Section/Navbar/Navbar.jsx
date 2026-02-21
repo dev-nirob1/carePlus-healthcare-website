@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { FiMenu, FiX } from "react-icons/fi";
 import BaseButton from "../../Element/BaseButton";
+import BaseTitle from "../../Element/BaseTitle";
+import ListItem from "../../Element/ListItem";
 import "./Navbar.css";
 
 function Navbar() {
@@ -35,7 +37,7 @@ function Navbar() {
           <div className="logo">
             <Link to="/" className="flex align-center gap-1">
               <span className="logo-icon bg-primary"></span>
-              <span className="logo-text">CarePlus</span>
+              <BaseTitle>CarePlus</BaseTitle>
             </Link>
           </div>
 
@@ -51,54 +53,54 @@ function Navbar() {
             className={`navigation flex align-center gap-2 ${isMenuOpen ? "open" : ""}`}
           >
             <ul className="nav-links flex gap-2">
-              <li>
+              <ListItem>
                 <Link
                   to="/"
                   className={location.pathname === "/" ? "active" : ""}
                 >
                   Home
                 </Link>
-              </li>
-              <li>
+              </ListItem>
+              <ListItem>
                 <Link
                   to="/about"
                   className={location.pathname === "/about" ? "active" : ""}
                 >
                   About
                 </Link>
-              </li>
-              <li>
+              </ListItem>
+              <ListItem>
                 <Link
                   to="/services"
                   className={location.pathname === "/services" ? "active" : ""}
                 >
                   Services
                 </Link>
-              </li>
-              <li>
+              </ListItem>
+              <ListItem>
                 <Link
                   to="/doctors"
                   className={location.pathname === "/doctors" ? "active" : ""}
                 >
                   Doctors
                 </Link>
-              </li>
-              <li>
+              </ListItem>
+              <ListItem>
                 <Link
                   to="/blog"
                   className={location.pathname === "/blog" ? "active" : ""}
                 >
                   Blog
                 </Link>
-              </li>
-              <li>
+              </ListItem>
+              <ListItem>
                 <Link
                   to="/contact"
                   className={location.pathname === "/contact" ? "active" : ""}
                 >
                   Contact
                 </Link>
-              </li>
+              </ListItem>
             </ul>
 
             <Link to="/appointments">

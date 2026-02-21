@@ -1,8 +1,4 @@
 .header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
   z-index: 1000;
   padding: 1rem 0;
   transition: all 0.3s ease-in-out;
@@ -26,10 +22,11 @@
   height: 100vh;
   background: var(--white-color);
   flex-direction: column;
-  justify-content: center;
-  padding: 2rem;
+  justify-content: flex-start;
+  padding: 6rem 2rem 2rem 2rem;
   transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   box-shadow: -10px 0 30px rgba(0, 0, 0, 0.05);
+  z-index: 1000;
 }
 
 .header .navigation.open {
@@ -58,6 +55,10 @@
   }
 
   .header.scrolled {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
     padding: 1rem 0;
     background: rgba(255, 255, 255, 0.8);
     backdrop-filter: blur(10px);
@@ -111,14 +112,14 @@
   }
 }
 
-.logo-icon {
+.header .logo-icon {
   width: 32px;
   height: 32px;
   border-radius: 8px;
   display: block;
 }
 
-.logo-text {
+.header .logo .title {
   font-size: 1.5rem;
   font-weight: 700;
   color: var(--text-main-color);
