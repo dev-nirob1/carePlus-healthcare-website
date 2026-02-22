@@ -12,16 +12,19 @@ function DoctorCard({ doctor }) {
         <div className="doctor-overlay flex-center">
           <div className="doctor-social flex gap-1">
             <a
-              href={doctor.social.facebook}
+              href={doctor.social?.facebook || "#"}
               className="social-link flex-center"
             >
               <FaFacebookF />
             </a>
-            <a href={doctor.social.twitter} className="social-link flex-center">
+            <a
+              href={doctor.social?.twitter || "#"}
+              className="social-link flex-center"
+            >
               <FaTwitter />
             </a>
             <a
-              href={doctor.social.linkedin}
+              href={doctor.social?.linkedin || "#"}
               className="social-link flex-center"
             >
               <FaLinkedinIn />
@@ -31,7 +34,7 @@ function DoctorCard({ doctor }) {
       </div>
       <div className="doctor-info p-1">
         <SubTitle>{doctor.name}</SubTitle>
-        <BaseParagraph>{doctor.specialty}</BaseParagraph>
+        <BaseParagraph>{doctor.specialty || doctor.role}</BaseParagraph>
       </div>
     </div>
   );

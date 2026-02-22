@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import PageHero from "../Components/Widget/PageHero";
-import MissionSection from "../Components/Section/MissionSection";
-import TeamSection from "../Components/Section/TeamSection";
+import MissionSection from "../Components/Section/MissionSection/MissionSection";
+import TeamSection from "../Components/Section/TeamSection/TeamSection";
 
 function AboutPage() {
   useEffect(() => {

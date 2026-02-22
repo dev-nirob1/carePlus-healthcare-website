@@ -1,0 +1,21 @@
+/* 
+  Team Section Minimal Styles
+  Staggered grid effect for a unique editorial feel.
+*/
+.team-section {
+  padding: 8rem 0;
+}
+
+.staggered-grid {
+  align-items: start;
+}
+
+.stagger-down {
+  margin-top: 3rem;
+}
+
+@media (max-width: 1024px) {
+  .stagger-down {
+    margin-top: 0;
+  }
+}

@@ -1,0 +1,81 @@
+/* 
+  Unique Mission Section Styles
+  Editorial layout with asymmetrical image komposisi.
+*/
+.mission-section {
+  padding: 8rem 0;
+}
+
+.mission-media {
+  min-height: 500px;
+}
+
+.main-image-wrapper {
+  width: 90%;
+  border-radius: 2rem;
+  overflow: hidden;
+}
+
+.overlay-image-wrapper {
+  position: absolute;
+  bottom: -40px;
+  right: 0;
+  width: 250px;
+  height: 250px;
+  border: 8px solid var(--white-color);
+  border-radius: 1.5rem;
+  overflow: hidden;
+  z-index: 10;
+}
+
+.experience-badge-floating {
+  position: absolute;
+  top: 40px;
+  left: -20px;
+  z-index: 20;
+  min-width: 100px;
+}
+
+/* Floating Stat Cards */
+.floating-stat-card {
+  border-color: rgba(12, 140, 233, 0.1) !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+}
+
+.floating-stat-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--primary-color) !important;
+  box-shadow: 0 10px 25px rgba(12, 140, 233, 0.1);
+}
+
+/* Global local overrides for this section */
+.tracking-wider {
+  letter-spacing: 0.05em;
+}
+.fs-sx {
+  font-size: 0.75rem;
+}
+.op-8 {
+  opacity: 0.8;
+}
+.img-fluid {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .mission-media {
+    min-height: 400px;
+    margin-bottom: 4rem;
+  }
+  .overlay-image-wrapper {
+    width: 180px;
+    height: 180px;
+    bottom: -20px;
+  }
+  .experience-badge-floating {
+    top: 0;
+    left: 0;
+  }
+}

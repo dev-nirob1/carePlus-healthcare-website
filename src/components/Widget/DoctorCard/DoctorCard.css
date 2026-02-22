@@ -8,7 +8,9 @@
 .doctor-card:hover {
   transform: translateY(-5px);
 }
-
+.doctor-card p {
+  margin: 0.25rem;
+}
 .doctor-image-container {
   height: 280px;
   position: relative;
