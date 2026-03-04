@@ -1,38 +1,44 @@
-import React from "react";
+import React, { useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination, Autoplay, Navigation } from "swiper/modules";
-import SectionHeader from "../../../../../components/Widget/SectionHeader/SectionHeader";
+import {
+  Pagination,
+  Autoplay,
+  Navigation,
+  EffectCreative,
+} from "swiper/modules";
+import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 import TestimonialCard from "../../../../../components/Widget/TestimonialCard/TestimonialCard";
 import "./TestimonialsSection.css";
 
-// Import Swiper styles
 import "swiper/css";
 import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/effect-creative";
 
 const testimonials = [
   {
     id: 1,
-    text: "The care I received at CarePlus was exceptional. The doctors were attentive and the staff was friendly. I felt safe and well-cared for throughout my entire medical stay.",
+    text: "The care I received at CarePlus was beyond exceptional. The doctors listened to every concern and the facilities feel more like a luxury hotel than a clinic.",
     name: "Robert Fox",
-    role: "Patient",
+    role: "Recovered Patient",
     avatar:
       "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=200&auto=format&fit=crop",
     rating: 5,
   },
   {
     id: 2,
-    text: "Professionalism at its best. Dr. Johnson explained everything clearly and made me feel at ease. The modern facilities are also a huge plus for anyone seeking quality care.",
+    text: "Absolute professionalism. Dr. Johnson explained my procedure clearly and made me feel completely at ease. I wouldn't trust my family's health with anyone else.",
     name: "Jenny Wilson",
-    role: "Patient",
+    role: "Regular Patient",
     avatar:
       "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=200&auto=format&fit=crop",
     rating: 5,
   },
   {
     id: 3,
-    text: "I brought my son here for a checkup and the pediatric team was wonderful. They knew exactly how to handle children and make the whole experience completely stress-free.",
+    text: "I brought my son here for an emergency and the pediatric team was phenomenal. Fast, empathetic, and incredibly effective under pressure.",
     name: "Kristin Watson",
-    role: "Mother",
+    role: "Grateful Mother",
     avatar:
       "https://images.unsplash.com/photo-1554151228-14d9def656ec?q=80&w=200&auto=format&fit=crop",
     rating: 5,
@@ -40,31 +46,62 @@ const testimonials = [
 ];
 
 function TestimonialsSection() {
-  return (
-    <section className="testimonials-section bg-light overflow-hidden">
-      <div className="container">
-        <SectionHeader
-          className="text-center mb-3"
-          title="Patient Testimonials"
-          subtitle="Don't just take our word for it. Here is what our patients have to say about their experience with us."
-        />
+  const swiperRef = useRef(null);
 
-        <div className="testimonials-carousel-wrapper">
+  return (
+    <section className="premium-testimonials section-padding bg-white relative overflow-hidden">
+      {/* Background Decor */}
+      <div className="testimonial-bg-blob"></div>
+
+      <div className="container relative z-10 flex flex-wrap align-center">
+        {/* Left Side: Sticky Premium Header */}
+        <div className="testimonial-header-col pr-4">
+          <span className="sub-title flex align-center gap-1 mb-2">
+            <span className="title-line"></span> Patient Stories
+          </span>
+          <h2 className="premium-title text-primary mb-3">
+            Trusted by Thousands of Happy Patients
+          </h2>
+          <p className="text-muted mb-4">
+            Our commitment to excellence translates into real stories of
+            recovery, comfort, and exceptional care.
+          </p>
+
+          {/* Custom Interactive Navigation */}
+          <div className="testimonial-custom-nav flex gap-1">
+            <button
+              className="test-nav-btn test-prev flex-center"
+              onClick={() => swiperRef.current?.slidePrev()}
+            >
+              <FiChevronLeft size={20} />
+            </button>
+            <button
+              className="test-nav-btn test-next flex-center"
+              onClick={() => swiperRef.current?.slideNext()}
+            >
+              <FiChevronRight size={20} />
+            </button>
+          </div>
+        </div>
+
+        {/* Right Side: Creative Slider */}
+        <div className="testimonial-slider-col">
           <Swiper
-            modules={[Autoplay, Navigation]}
-            spaceBetween={30}
-            slidesPerView={1}
-            breakpoints={{
-              768: {
-                slidesPerView: 2,
-              },
+            onSwiper={(swiper) => {
+              swiperRef.current = swiper;
             }}
+            modules={[Autoplay, Navigation, Pagination, EffectCreative]}
+            effect="creative"
+            creativeEffect={{
+              prev: { shadow: true, translate: [0, 0, -400] },
+              next: { translate: ["100%", 0, 0] },
+            }}
+            grabCursor={true}
+            allowTouchMove={true}
             loop={true}
-            autoplay={{
-              delay: 3000,
-              disableOnInteraction: false,
-            }}
-            navigation={true}
+            autoplay={{ delay: 5000, disableOnInteraction: false }}
+            pagination={{ clickable: true, el: ".test-pagination-custom" }}
+            className="premium-testimonial-swiper"
           >
             {testimonials.map((testimonial) => (
               <SwiperSlide key={testimonial.id}>
@@ -72,6 +109,8 @@ function TestimonialsSection() {
               </SwiperSlide>
             ))}
           </Swiper>
+
+          <div className="test-pagination-custom mt-3 flex justify-center gap-1"></div>
         </div>
       </div>
     </section>

@@ -1,44 +1,43 @@
 import React from "react";
-import { FaUserMd, FaAmbulance, FaRegClock } from "react-icons/fa";
-import BaseTitle from "../../../../../components/Element/BaseTitle";
-import BaseParagraph from "../../../../../components/Element/BaseParagraph";
 import "./StatsSection.css";
 
 const stats = [
   {
-    id: 1,
-    icon: <FaRegClock />,
-    title: "24/7 Service",
-    description: "Available whenever you need us most.",
+    value: "25+",
+    label: "Years Experience",
   },
   {
-    id: 2,
-    icon: <FaUserMd />,
-    title: "Qualified Doctors",
-    description: "Expert professionals for your care.",
+    value: "10k",
+    label: "Happy Patients",
   },
   {
-    id: 3,
-    icon: <FaAmbulance />,
-    title: "Emergency Care",
-    description: "Rapid response for critical situations.",
+    value: "150+",
+    label: "Expert Doctors",
+  },
+  {
+    value: "35+",
+    label: "Medical Awards",
   },
 ];
 
 function StatsSection() {
   return (
-    <section className="stats-section">
-      <div className="container">
-        <div className="stats-panel">
-          {stats.map((stat) => (
-            <div className="stat-item flex align-center gap-2" key={stat.id}>
-              <div className="stat-icon flex-center bg-light">{stat.icon}</div>
-              <div className="stat-content">
-                <BaseTitle className="mb-1">{stat.title}</BaseTitle>
-                <BaseParagraph>{stat.description}</BaseParagraph>
+    <section className="premium-stats-section relative">
+      <div className="container relative z-10">
+        <div className="stats-glass-panel glass-panel">
+          <div className="premium-stats-grid">
+            {stats.map((stat, index) => (
+              <div key={index} className="stat-item text-center">
+                <h2 className="premium-stat-value mb-1">{stat.value}</h2>
+                <p className="stat-label text-muted mb-0">{stat.label}</p>
+
+                {/* Decorative Divider Line (Except last item) */}
+                {index < stats.length - 1 && (
+                  <div className="stat-divider hidden-mobile"></div>
+                )}
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>

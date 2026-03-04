@@ -1,41 +1,105 @@
-/* 
-  Testimonials Component Minimum Styles 
-  We use SwiperJS defaults and global utility classes for layout.
-  The only CSS needed here is overriding Swiper's pagination dots to match Lumina theme.
-*/
-.testimonials-section {
-  padding: 5rem 0;
+/* --- Premium Testimonials Section Styles --- */
+.premium-testimonials {
+  position: relative;
+  border-top: 1px solid var(--border-color);
 }
 
-/* Navigation Styles */
-.testimonials-carousel-wrapper .swiper-button-next,
-.testimonials-carousel-wrapper .swiper-button-prev {
-  color: var(--primary-color);
-  background: var(--white-color);
-  width: 40px;
-  height: 40px;
+.testimonial-bg-blob {
+  position: absolute;
+  bottom: -100px;
+  right: -100px;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(
+    circle,
+    rgba(0, 180, 216, 0.05) 0%,
+    transparent 70%
+  );
   border-radius: 50%;
-  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
-  top: 50%;
-  transform: translateY(-50%);
+  pointer-events: none;
+  z-index: 1;
 }
 
-.testimonials-carousel-wrapper .swiper-button-next::after,
-.testimonials-carousel-wrapper .swiper-button-prev::after {
-  font-size: 1rem !important;
-  font-weight: bold;
+/* Layout Columns */
+.testimonial-header-col {
+  width: 40%;
+  position: sticky;
+  top: 100px;
 }
 
-.testimonials-carousel-wrapper .swiper-button-next {
-  right: -10px;
-}
-.testimonials-carousel-wrapper .swiper-button-prev {
-  left: -10px;
+.testimonial-slider-col {
+  width: 60%;
+  padding-left: 2rem;
 }
 
-@media (max-width: 1024px) {
-  .testimonials-carousel-wrapper .swiper-button-next,
-  .testimonials-carousel-wrapper .swiper-button-prev {
-    display: none;
+/* Custom Navigation Buttons */
+.testimonial-custom-nav {
+  margin-top: 2rem;
+}
+
+.test-nav-btn {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background: var(--white-color);
+  border: 1px solid var(--border-color);
+  color: var(--primary-color);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  box-shadow: var(--shadow-sm);
+  outline: none;
+}
+
+.test-nav-btn:hover {
+  background: var(--primary-color);
+  color: var(--white-color);
+  border-color: var(--primary-color);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(15, 76, 92, 0.2);
+}
+
+/* Custom Pagination */
+.test-pagination-custom .swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  background: var(--border-color);
+  opacity: 1;
+  border-radius: 50%;
+  transition: all var(--transition-fast);
+  margin: 0 4px;
+  cursor: pointer;
+}
+
+.test-pagination-custom .swiper-pagination-bullet-active {
+  width: 25px;
+  border-radius: 5px;
+  background: var(--secondary-color);
+}
+
+.premium-testimonial-swiper {
+  overflow: visible; /* Allows creative effect to spill out cleanly */
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .testimonial-header-col,
+  .testimonial-slider-col {
+    width: 100%;
+    padding: 0;
+  }
+
+  .testimonial-header-col {
+    position: relative;
+    top: 0;
+    margin-bottom: 3rem;
+    text-align: center;
+  }
+
+  .testimonial-header-col .sub-title {
+    justify-content: center;
+  }
+
+  .testimonial-custom-nav {
+    justify-content: center;
   }
 }

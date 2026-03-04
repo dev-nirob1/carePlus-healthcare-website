@@ -47,12 +47,9 @@ function TeamSection() {
           subtitle="Guided by world-class medical experts and administrators dedicated to revolutionizing patient care."
         />
 
-        <div className="grid medium-2 large-4 gap-2 staggered-grid">
-          {leadershipMembers.map((member, index) => (
-            <div
-              key={member.id}
-              className={`team-card-wrapper ${index % 2 !== 0 ? "stagger-down" : ""}`}
-            >
+        <div className="leadership-grid">
+          {leadershipMembers.map((member) => (
+            <div key={member.id} className="team-card-wrapper">
               <DoctorCard doctor={member} />
             </div>
           ))}

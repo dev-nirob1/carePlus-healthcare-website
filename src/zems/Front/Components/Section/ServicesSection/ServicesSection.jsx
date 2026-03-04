@@ -8,19 +8,31 @@ function ServicesSection() {
   const featuredServices = servicesData.slice(0, 6);
 
   return (
-    <section className="services-section bg-light">
-      <div className="container">
-        {/* Section Header */}
-        <SectionHeader
-          className="text-center mb-3"
-          title="Our Medical Services"
-          subtitle="We provide a wide range of medical services to meet your health needs. Our team of specialists is dedicated to delivering the best care possible."
-        />
+    <section className="premium-services-section bg-light relative overflow-hidden">
+      {/* Decorative Blob */}
+      <div className="services-blob"></div>
 
-        {/* Services Grid & Cards */}
-        <div className="medium-2 large-3 gap-2">
+      <div className="container relative z-10">
+        <div className="flex flex-wrap justify-between align-center mb-4 services-header-row">
+          <div className="services-header-content">
+            <span className="sub-title flex align-center gap-1">
+              <span className="title-line"></span> Departments
+            </span>
+            <h2 className="premium-title text-primary m-0">
+              Premium Healthcare Services
+            </h2>
+          </div>
+          <p className="services-intro-text text-muted m-0">
+            We provide a comprehensive range of medical services with a focus on
+            patient comfort, utilizing the latest technology and top-tier
+            specialists.
+          </p>
+        </div>
+
+        {/* Premium Grid */}
+        <div className="premium-services-grid">
           {featuredServices.map((service, index) => (
-            <ServiceCard key={index} service={service} />
+            <ServiceCard key={index} service={service} index={index} />
           ))}
         </div>
       </div>

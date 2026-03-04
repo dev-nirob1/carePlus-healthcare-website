@@ -1,19 +1,23 @@
 import HeroSection from "../Components/Section/HeroSection/HeroSection";
 import StatsSection from "../Components/Section/StatsSection/StatsSection";
+import AboutPreview from "../Components/Section/AboutPreview/AboutPreview";
 import ServicesSection from "../Components/Section/ServicesSection/ServicesSection";
-import TestimonialsSection from "../Components/Section/TestimonialsSection/TestimonialsSection";
+import WhyChooseUs from "../Components/Section/WhyChooseUs/WhyChooseUs";
 import DoctorsSection from "../Components/Section/DoctorsSection/DoctorsSection";
-import ServiceCTA from "../Components/Section/ServiceCTA";
+import TestimonialsSection from "../Components/Section/TestimonialsSection/TestimonialsSection";
+import CTASection from "../Components/Section/CTASection/CTASection";
 
 function HomePage() {
   return (
     <div className="home-page">
       <HeroSection />
-      <StatsSection />
+      <AboutPreview />
       <ServicesSection />
+      <WhyChooseUs />
       <DoctorsSection />
       <TestimonialsSection />
-      <ServiceCTA />
+      <StatsSection />
+      <CTASection />
     </div>
   );
 }

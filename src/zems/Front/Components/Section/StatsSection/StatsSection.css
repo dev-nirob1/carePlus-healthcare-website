@@ -1,94 +1,103 @@
-/* Mobile-First Stats Section */
-.stats-section {
-  position: relative;
-  z-index: 20; /* High z-index to overlap the hero section */
-  margin-top: -2rem; /* Pull up to overlap */
-  padding-bottom: 3rem;
+/* --- Premium Stats Section Styles --- */
+.premium-stats-section {
+  margin-top: -6rem; /* Overlaps previous section */
+  margin-bottom: 6rem;
+  z-index: 20;
 }
 
-/* Floating Glassmorphic Panel */
-.stats-panel {
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(10px);
-  border-radius: 1rem;
-  box-shadow: 0 15px 40px rgba(15, 23, 42, 0.08); /* Soft deep shadow */
-  border: 1px solid var(--border-color);
-  padding: 2rem;
-  display: flex;
-  flex-direction: column;
+.stats-glass-panel {
+  padding: 4rem;
+  background: rgba(255, 255, 255, 0.95); /* Less frosted, more crisp */
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-lg);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Internal Decorative Glow */
+.stats-glass-panel::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    circle,
+    rgba(0, 180, 216, 0.05) 0%,
+    transparent 60%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+.premium-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
   gap: 2rem;
+  position: relative;
+  z-index: 1;
 }
 
 .stat-item {
   position: relative;
 }
 
-/* Add custom dividers between items, but not for the last one */
-.stat-item:not(:last-child)::after {
-  content: "";
+/* Massive Gradient Numbers */
+.premium-stat-value {
+  font-size: 3.5rem;
+  font-weight: 800;
+  line-height: 1;
+  background: linear-gradient(
+    135deg,
+    var(--primary-color) 0%,
+    var(--secondary-color) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text; /* Standard syntax */
+  display: inline-block;
+}
+
+.stat-label {
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+/* Vertical Dividers */
+.stat-divider {
   position: absolute;
-  bottom: -1rem;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 80%;
-  height: 1px;
-  background: var(--border-color);
+  top: 10%;
+  right: -1rem; /* Half of gap */
+  width: 1px;
+  height: 80%;
+  background-color: var(--border-color);
 }
 
-.stat-icon {
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
-  color: var(--primary-color);
-  font-size: 1.5rem;
-  flex-shrink: 0;
-  transition: transform 0.3s ease;
-}
-
-.stat-item:hover .stat-icon {
-  transform: scale(1.1);
-  background: var(--primary-color);
-  color: var(--white-color);
-}
-
-.stats-section .title {
-  color: var(--text-main-color);
-  font-size: 1.15rem;
-}
-
-.stats-section p {
-  color: var(--text-muted-color);
-  font-size: 0.95rem;
-}
-
-/* Desktop Overrides */
-@media (min-width: 992px) {
-  .stats-section {
-    margin-top: -5rem; /* Deeper overlap on desktop */
-    padding-bottom: 5rem;
+/* Responsive */
+@media (max-width: 992px) {
+  .premium-stats-section {
+    margin-top: 3rem;
   }
 
-  .stats-panel {
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 3rem;
-    gap: 0;
+  .premium-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4rem 2rem;
   }
 
-  .stat-item {
-    flex: 1;
-    padding: 0 2rem;
+  .stats-glass-panel {
+    padding: 3rem 2rem;
   }
 
-  /* Vertical dividers instead of horizontal */
-  .stat-item:not(:last-child)::after {
-    bottom: auto;
-    left: auto;
-    right: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 1px;
-    height: 70%;
-    background: var(--border-color);
+  .stat-divider.hidden-mobile {
+    display: none;
+  }
+}
+
+@media (max-width: 576px) {
+  .premium-stats-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
   }
 }

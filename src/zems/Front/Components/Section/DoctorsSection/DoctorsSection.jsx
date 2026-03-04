@@ -7,7 +7,7 @@ const doctors = [
   {
     id: 1,
     name: "Dr. Sarah Johnson",
-    specialty: "Cardiologist",
+    specialty: "Head Cardiologist",
     image:
       "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?q=80&w=1000&auto=format&fit=crop",
     social: { facebook: "#", twitter: "#", linkedin: "#" },
@@ -15,7 +15,7 @@ const doctors = [
   {
     id: 2,
     name: "Dr. James Wilson",
-    specialty: "Neurologist",
+    specialty: "Chief Neurologist",
     image:
       "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?q=80&w=1000&auto=format&fit=crop",
     social: { facebook: "#", twitter: "#", linkedin: "#" },
@@ -23,7 +23,7 @@ const doctors = [
   {
     id: 3,
     name: "Dr. Emily Parker",
-    specialty: "Pediatrician",
+    specialty: "Senior Pediatrician",
     image:
       "https://images.unsplash.com/photo-1594824476967-48c8b964273f?q=80&w=1000&auto=format&fit=crop",
     social: { facebook: "#", twitter: "#", linkedin: "#" },
@@ -31,43 +31,32 @@ const doctors = [
   {
     id: 4,
     name: "Dr. Michael Chen",
-    specialty: "Dental Surgeon",
+    specialty: "Lead Dental Surgeon",
     image:
       "https://images.unsplash.com/photo-1622253692010-333f2da6031d?q=80&w=1000&auto=format&fit=crop",
-    social: { facebook: "#", twitter: "#", linkedin: "#" },
-  },
-  {
-    id: 5,
-    name: "Dr. Amanda Lee",
-    specialty: "Orthopedic",
-    image:
-      "https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=1000&auto=format&fit=crop",
-    social: { facebook: "#", twitter: "#", linkedin: "#" },
-  },
-  {
-    id: 6,
-    name: "Dr. Robert Fox",
-    specialty: "Dermatologist",
-    image:
-      "https://images.unsplash.com/photo-1537368910025-700350fe46c7?q=80&w=1000&auto=format&fit=crop",
     social: { facebook: "#", twitter: "#", linkedin: "#" },
   },
 ];
 
 function DoctorsSection() {
   return (
-    <section className="doctors-section bg-white">
+    <section className="premium-doctors-section section-padding bg-light relative">
       <div className="container">
-        <SectionHeader
-          className="text-center mb-3"
-          title="Meet Our Specialists"
-          subtitle="Top-tier medical professionals dedicated to providing you with the best possible care and treatment."
-        />
+        {/* Minimal Premium Header */}
+        <div className="text-center mb-4">
+          <span className="sub-title flex-center gap-1 mx-auto">
+            <span className="title-line"></span> Our Medical Team{" "}
+            <span className="title-line"></span>
+          </span>
+          <h2 className="premium-title text-primary max-w-700 mx-auto">
+            Meet Our Board-Certified Specialists
+          </h2>
+        </div>
 
-        {/* Global Grid System handling responsiveness automatically */}
-        <div className="medium-2 large-3 gap-2">
-          {doctors.map((doctor) => (
-            <DoctorCard key={doctor.id} doctor={doctor} />
+        {/* Premium Doctors Grid */}
+        <div className="premium-doctors-grid">
+          {doctors.map((doctor, index) => (
+            <DoctorCard key={doctor.id} doctor={doctor} index={index} />
           ))}
         </div>
       </div>

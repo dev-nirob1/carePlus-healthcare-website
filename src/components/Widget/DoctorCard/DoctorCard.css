@@ -1,50 +1,113 @@
-.doctor-card {
-  border-radius: 1rem;
-  overflow: hidden;
-  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
-  transition: all 0.3s ease-in-out;
-  text-align: center;
-}
-.doctor-card:hover {
-  transform: translateY(-5px);
-}
-.doctor-card p {
-  margin: 0.25rem;
-}
-.doctor-image-container {
-  height: 280px;
+/* --- Premium Doctor Card --- */
+.premium-doctor-card {
+  border-radius: var(--radius-lg);
+  overflow: visible; /* Needed for floating FAB */
+  transition: all var(--transition-smooth);
   position: relative;
-  overflow: hidden;
-}
-.doctor-card .image {
-  object-fit: cover;
-  transition: transform 0.5s ease;
-}
-.doctor-card:hover .image {
-  transform: scale(1.1);
+  display: flex;
+  flex-direction: column;
 }
 
-.doctor-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to top, var(--primary-color), transparent);
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  /* padding-bottom: 2rem; */
+/* Image Setup */
+.doctor-img-wrapper {
+  position: relative;
+  height: 380px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  z-index: 1;
 }
-.doctor-card:hover .doctor-overlay {
-  opacity: 0.9;
+
+.doctor-profile-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.premium-doctor-card:hover .doctor-profile-img {
+  transform: scale(1.05);
+}
+
+/* Floating Action Button (FAB) for Socials */
+.social-fab {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 10;
+  transition: all var(--transition-smooth);
+  font-size: 1.25rem;
+}
+
+.premium-doctor-card:hover .social-fab {
+  background-color: var(--secondary-color);
+  transform: rotate(45deg); /* Spin the plus icon to look like an X */
+}
+
+/* Hidden drawer of social icons */
+.social-links-drawer {
+  position: absolute;
+  top: 50%;
+  right: 50px;
+  transform: translateY(-50%) translateX(20px);
+  opacity: 0;
+  pointer-events: none;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 0.5rem;
+  border-radius: 20px;
+  backdrop-filter: blur(5px);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.premium-doctor-card:hover .social-links-drawer {
+  opacity: 1;
+  pointer-events: all;
+  transform: translateY(-50%) translateX(0);
 }
 
 .social-link {
-  width: 40px;
-  height: 40px;
+  width: 32px;
+  height: 32px;
   border-radius: 50%;
-  color: var(--primary-color);
-  background: var(--white-color);
-  transition: 0.2s;
+  transition: all var(--transition-fast);
+  transform: rotate(-45deg); /* Counteract the parent rotation */
 }
+
 .social-link:hover {
-  background: var(--primary-color);
-  color: var(--white-color);
+  background-color: var(--primary-color) !important;
+  color: var(--white-color) !important;
+  transform: rotate(-45deg) scale(1.1);
+}
+
+/* overlapping info card */
+.doctor-info-card {
+  margin: -40px 20px 0;
+  background-color: var(--white-color);
+  padding: 1.5rem 1rem;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  transition:
+    transform var(--transition-smooth),
+    box-shadow var(--transition-smooth);
+}
+
+.premium-doctor-card:hover .doctor-info-card {
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-lg);
+}
+
+.doctor-name {
+  font-weight: 700;
+  font-size: 1.15rem;
+}
+
+.doctor-specialty {
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }

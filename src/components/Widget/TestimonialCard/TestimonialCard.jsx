@@ -1,30 +1,39 @@
 import React from "react";
 import { FaQuoteLeft, FaStar } from "react-icons/fa";
-import SubTitle from "../../Element/SubTitle";
-import BaseParagraph from "../../Element/BaseParagraph";
 import "./TestimonialCard.css";
 
 function TestimonialCard({ testimonial }) {
   return (
-    <div className="testimonial-card bg-white">
-      <div className="flex justify-between align-center">
-        <FaQuoteLeft className="quote-icon" />
-        <div className="rating flex">
+    <div className="premium-testimonial-card bg-white">
+      {/* Decorative Quote Icon */}
+      <div className="quote-watermark text-light-accent">
+        <FaQuoteLeft />
+      </div>
+
+      <div className="testimonial-content-wrapper relative z-10">
+        {/* Rating Stars */}
+        <div className="testimonial-rating mb-2 flex gap-1">
           {[...Array(testimonial.rating)].map((_, i) => (
-            <FaStar key={i} size={14} />
+            <FaStar key={i} className="text-warning" size={14} />
           ))}
         </div>
-      </div>
-      <BaseParagraph className="quote">"{testimonial.text}"</BaseParagraph>
-      <div className="reviewer-info flex align-center gap-1">
-        <img
-          src={testimonial.avatar}
-          alt={testimonial.name}
-          className="avatar"
-        />
-        <div className="reviewer-details">
-          <SubTitle>{testimonial.name}</SubTitle>
-          <BaseParagraph>{testimonial.role}</BaseParagraph>
+
+        {/* The Quote */}
+        <p className="testimonial-quote text-main-color">
+          "{testimonial.text}"
+        </p>
+
+        {/* User Info */}
+        <div className="testimonial-author mt-4 pt-3 flex align-center gap-2">
+          <img
+            src={testimonial.avatar}
+            alt={testimonial.name}
+            className="author-avatar"
+          />
+          <div>
+            <h5 className="mb-0 text-primary">{testimonial.name}</h5>
+            <span className="text-small text-muted">{testimonial.role}</span>
+          </div>
         </div>
       </div>
     </div>
