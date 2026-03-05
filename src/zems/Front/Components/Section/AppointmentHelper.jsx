@@ -1,48 +1,47 @@
-import React from "react";
 import { FaPhoneAlt, FaClock, FaMapMarkerAlt } from "react-icons/fa";
+import SubTitle from "../../../../components/Element/SubTitle";
+import ListItem from "../../../../components/Element/ListItem";
+import BaseParagraph from "../../../../components/Element/BaseParagraph";
 
 function AppointmentHelper() {
   return (
     <div className="appointment-helper">
       <div className="helper-card">
-        <h3>
+        <SubTitle>
           <FaPhoneAlt /> Emergency Contacts
-        </h3>
-        <p>For medical emergencies, please call:</p>
+        </SubTitle>
         <span className="emergency-contact">+1 (555) 123-4567</span>
-        <p>Available 24/7</p>
       </div>
 
       <div className="helper-card">
-        <h3>
+        <SubTitle>
           <FaClock /> Opening Hours
-        </h3>
+        </SubTitle>
         <ul className="hours-list">
-          <li>
+          <ListItem>
             <span>Mon - Fri</span>
             <span>8:00 AM - 8:00 PM</span>
-          </li>
-          <li>
+          </ListItem>
+          <ListItem>
             <span>Saturday</span>
             <span>9:00 AM - 6:00 PM</span>
-          </li>
-          <li>
+          </ListItem>
+          <ListItem>
             <span>Sunday</span>
             <span>10:00 AM - 4:00 PM</span>
-          </li>
+          </ListItem>
         </ul>
       </div>
 
       <div className="helper-card">
-        <h3>
+        <SubTitle>
           <FaMapMarkerAlt /> Clinic Location
-        </h3>
-        <p>
+        </SubTitle>
+        <BaseParagraph>
           123 Healthcare Avenue,
           <br />
           Medical District, NY 10001
-        </p>
-        <p>Free parking available for patients.</p>
+        </BaseParagraph>
       </div>
     </div>
   );

@@ -1,27 +1,21 @@
 .appointment-section {
-  padding: 5rem 1rem;
-  background-color: #f8fafc;
+  padding: 5rem 0;
 }
-
-.appointment-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: 3rem;
-  align-items: start;
-}
-
-/* Helper Side Panel */
 .appointment-helper {
-  background: #0f172a;
-  color: white;
-  padding: 2.5rem;
-  border-radius: 24px;
-  position: sticky;
-  top: 100px;
+  background: var(--primary-color);
+  color: var(--white-color);
+  padding: 2rem;
+  border-radius: 1rem;
+  height: fit-content;
 }
-
+.appointment-helper p {
+  color: var(--white-color);
+  font-size: 1.2rem;
+}
+.appointment-helper .emergency-contact {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
 .helper-card {
   margin-bottom: 2.5rem;
 }
@@ -30,40 +24,12 @@
   margin-bottom: 0;
 }
 
-.helper-card h3 {
-  font-size: 1.25rem;
-  margin-bottom: 1rem;
-  color: #38bdf8;
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-}
-
-.helper-card p {
-  color: #94a3b8;
-  line-height: 1.6;
-  margin-bottom: 0.5rem;
-}
-
-.emergency-contact {
-  font-size: 1.5rem;
-  font-weight: 800;
-  color: white;
-  margin-top: 0.5rem;
-  display: block;
-}
-
-.hours-list {
-  list-style: none;
-  padding: 0;
-}
-
 .hours-list li {
   display: flex;
   justify-content: space-between;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   padding: 0.75rem 0;
-  color: #e2e8f0;
+  color: var(--white-color);
 }
 
 .hours-list li:last-child {
@@ -71,16 +37,5 @@
 }
 
 .hours-list span:first-child {
-  color: #94a3b8;
-}
-
-@media (max-width: 1024px) {
-  .appointment-container {
-    grid-template-columns: 1fr;
-    gap: 4rem;
-  }
-
-  .appointment-helper {
-    position: static;
-  }
+  color: var(--white-color);
 }

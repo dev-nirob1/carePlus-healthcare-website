@@ -5,10 +5,14 @@ import "./AppointmentSection.css";
 
 function AppointmentSection() {
   return (
-    <section className="appointment-section">
-      <div className="appointment-container">
-        <AppointmentForm />
-        <AppointmentHelper />
+    <section className="appointment-section container">
+      <div className="large-8 gap-2">
+        <div className="large-span-5">
+          <AppointmentForm />
+        </div>
+        <div className="large-span-3">
+          <AppointmentHelper />
+        </div>
       </div>
     </section>
   );
