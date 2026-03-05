@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { FiCheck, FiArrowRight } from "react-icons/fi";
 import { FaUserMd, FaAward, FaHeartbeat } from "react-icons/fa";
+import aboutPreviewHero from "../../../../../assets/about-preview-hero.png";
 import "./AboutPreview.css";
 
 const features = [
@@ -40,8 +41,8 @@ function AboutPreview() {
         <div className="about-img-col">
           <div className="about-img-main">
             <img
-              src="https://images.unsplash.com/photo-1551076805-e1869033e561?q=80&w=900&auto=format&fit=crop"
-              alt="Modern medical facility"
+              src={aboutPreviewHero}
+              alt="CarePlus luxury medical facility at dusk"
             />
           </div>
 

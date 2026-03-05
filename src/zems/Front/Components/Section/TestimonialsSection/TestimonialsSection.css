@@ -1,13 +1,14 @@
-/* --- Premium Testimonials Section Styles --- */
+/* --- Premium Testimonials Section Styles (Centered Carousel) --- */
 .premium-testimonials {
   position: relative;
   border-top: 1px solid var(--border-color);
+  background-color: var(--light-bg-color);
 }
 
 .testimonial-bg-blob {
   position: absolute;
-  bottom: -100px;
-  right: -100px;
+  top: 10%;
+  left: -5%;
   width: 500px;
   height: 500px;
   background: radial-gradient(
@@ -20,86 +21,94 @@
   z-index: 1;
 }
 
-/* Layout Columns */
-.testimonial-header-col {
-  width: 40%;
-  position: sticky;
-  top: 100px;
+/* Centered Header Row */
+.testimonial-header {
+  max-width: 650px;
+  margin: 0 auto;
 }
 
-.testimonial-slider-col {
-  width: 60%;
-  padding-left: 2rem;
+.testimonial-intro-text {
+  font-size: 1.1rem;
+  line-height: 1.6;
 }
 
-/* Custom Navigation Buttons */
-.testimonial-custom-nav {
-  margin-top: 2rem;
+/* Carousel Container */
+.testimonial-carousel-wrapper {
+  position: relative;
+  margin-top: 3rem;
+}
+
+/* Swiper overrides */
+.premium-testimonial-swiper {
+  padding-bottom: 2rem !important; /* Space for shadow cast by cards */
+  /* Remove overflow:visible so the slides outside the container are hidden cleanly */
+  overflow: hidden;
+}
+
+/* Layout for controls below slider */
+.testimonial-controls {
+  max-width: 500px;
+  margin: 0 auto;
 }
 
 .test-nav-btn {
-  width: 45px;
-  height: 45px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
   background: var(--white-color);
   border: 1px solid var(--border-color);
   color: var(--primary-color);
   cursor: pointer;
-  transition: all var(--transition-fast);
+  transition: all var(--transition-smooth);
   box-shadow: var(--shadow-sm);
   outline: none;
+  z-index: 10;
 }
 
 .test-nav-btn:hover {
   background: var(--primary-color);
   color: var(--white-color);
   border-color: var(--primary-color);
-  transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(15, 76, 92, 0.2);
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 10px 20px rgba(15, 76, 92, 0.2);
 }
 
 /* Custom Pagination */
+.test-pagination-custom {
+  align-items: center;
+}
+
 .test-pagination-custom .swiper-pagination-bullet {
   width: 10px;
   height: 10px;
-  background: var(--border-color);
+  background: rgba(15, 76, 92, 0.2); /* Subtle primary color */
   opacity: 1;
   border-radius: 50%;
-  transition: all var(--transition-fast);
-  margin: 0 4px;
+  transition: all var(--transition-smooth);
+  margin: 0 6px !important;
   cursor: pointer;
 }
 
+.test-pagination-custom .swiper-pagination-bullet-hover,
+.test-pagination-custom .swiper-pagination-bullet:hover {
+  background: var(--primary-color);
+  opacity: 0.7;
+}
+
 .test-pagination-custom .swiper-pagination-bullet-active {
-  width: 25px;
+  width: 30px;
   border-radius: 5px;
   background: var(--secondary-color);
 }
 
-.premium-testimonial-swiper {
-  overflow: visible; /* Allows creative effect to spill out cleanly */
-}
-
 /* Responsive */
-@media (max-width: 992px) {
-  .testimonial-header-col,
-  .testimonial-slider-col {
-    width: 100%;
-    padding: 0;
+@media (max-width: 768px) {
+  .testimonial-header {
+    margin-bottom: 2rem !important;
   }
 
-  .testimonial-header-col {
-    position: relative;
-    top: 0;
-    margin-bottom: 3rem;
-    text-align: center;
-  }
-
-  .testimonial-header-col .sub-title {
-    justify-content: center;
-  }
-
-  .testimonial-custom-nav {
-    justify-content: center;
+  .testimonial-controls {
+    max-width: 100%;
+    padding: 0 1rem;
   }
 }

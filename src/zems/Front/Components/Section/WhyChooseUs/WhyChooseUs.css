@@ -1,89 +1,220 @@
-/* ---- Why Choose Us ---- */
+/* ---- Premium Why Choose Us (Split Layout) ---- */
 .why-section {
-  background-color: var(--light-bg-color);
+  background-color: var(--white-color); /* Contrast with Services section */
 }
 
-/* Header */
-.why-header h2 {
-  margin-bottom: 1rem;
+/* Split Container */
+.why-split-container {
+  display: flex;
+  align-items: stretch;
+  gap: 4rem;
+  padding: 2rem 0;
+}
+
+/* Left Side: Image Wrapper */
+.why-image-wrapper {
+  flex: 1;
+  position: relative;
+  min-width: 45%;
+}
+
+.why-image-inner {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  height: 100%;
+  min-height: 500px;
+}
+
+.why-main-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s ease;
+}
+
+.why-image-inner:hover .why-main-img {
+  transform: scale(1.05);
+}
+
+/* Glassmorphism Badge */
+.why-experience-badge {
+  position: absolute;
+  bottom: 2.5rem;
+  left: -2rem; /* Pull slightly outside if container allows, else 2rem inside */
+  /* Reverting to inside since inner has overflow: hidden */
+  /* Need to fix this so badge can break out, but for now keep inside */
+}
+
+/* Let's fix the badge position to float over the image elegantly */
+.why-image-wrapper .why-experience-badge {
+  position: absolute;
+  bottom: 2rem;
+  right: -2rem; /* Breaking out to the right */
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 1.5rem 2.5rem;
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  transition:
+    transform var(--transition-smooth),
+    box-shadow var(--transition-smooth);
+}
+
+.why-image-wrapper:hover .why-experience-badge {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.badge-years {
+  font-size: 3.5rem;
+  font-weight: 800;
+  line-height: 1;
+  margin-bottom: 0.25rem;
+}
+
+.badge-text {
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+/* Decorative Blob behind image */
+.why-image-blob {
+  position: absolute;
+  top: -5%;
+  left: -5%;
+  width: 80%;
+  height: 80%;
+  background: var(--accent-color);
+  filter: blur(60px);
+  border-radius: 50%;
+  z-index: -1;
+  opacity: 0.6;
+}
+
+/* Right Side: Content */
+.why-content-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .why-intro {
   font-size: 1.1rem;
-  color: var(--text-muted-color);
-  max-width: 600px;
-  margin: 0 auto;
-  line-height: 1.8;
+  line-height: 1.7;
+  max-width: 90%;
 }
 
-/* Cards Grid */
-.why-grid {
+/* Mini Grid Features */
+.why-mini-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.75rem;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem 1rem;
 }
 
-.why-card {
-  background: var(--white-color);
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius-lg);
-  padding: 2rem 1.75rem;
-  transition:
-    transform var(--transition-smooth),
-    box-shadow var(--transition-smooth),
-    border-color var(--transition-smooth);
-}
-
-.why-card:hover {
-  transform: translateY(-6px);
-  box-shadow: var(--shadow-md);
-  border-color: var(--secondary-color);
-}
-
-.why-card-icon {
-  width: 52px;
-  height: 52px;
-  border-radius: var(--radius-md);
-  background: var(--accent-color);
-  color: var(--primary-color);
+.why-mini-card {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.4rem;
-  margin-bottom: 1.25rem;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1rem;
+  border-radius: var(--radius-md);
   transition:
-    background var(--transition-fast),
-    color var(--transition-fast);
+    background-color var(--transition-smooth),
+    transform var(--transition-smooth);
+  border: 1px solid transparent;
 }
 
-.why-card:hover .why-card-icon {
-  background: var(--primary-color);
-  color: var(--white-color);
+.why-mini-card:hover {
+  background-color: var(--white-color);
+  border-color: rgba(0, 0, 0, 0.05); /* Slight border */
+  box-shadow: var(--shadow-sm);
+  transform: translateX(5px);
 }
 
-.why-card h4 {
+.why-mini-icon {
+  width: 48px;
+  height: 48px;
+  min-width: 48px;
+  border-radius: 50%;
+  font-size: 1.35rem;
+  transition:
+    background-color var(--transition-smooth),
+    color var(--transition-smooth),
+    transform var(--transition-smooth);
+}
+
+.why-mini-card:hover .why-mini-icon {
+  background-color: var(--primary-color) !important;
+  color: var(--white-color) !important;
+  transform: scale(1.1) rotate(5deg);
+}
+
+.why-mini-info h5 {
   font-size: 1.1rem;
   font-weight: 700;
-  color: var(--text-main-color);
-  margin-bottom: 0.6rem;
 }
 
-.why-card p {
+.why-mini-info p {
   font-size: 0.95rem;
-  color: var(--text-muted-color);
-  line-height: 1.7;
-  margin: 0;
+  line-height: 1.6;
 }
 
 /* Responsive */
+@media (max-width: 1200px) {
+  .why-split-container {
+    gap: 3rem;
+  }
+  .why-image-wrapper .why-experience-badge {
+    right: 1rem;
+    bottom: 1rem;
+  }
+}
+
 @media (max-width: 992px) {
-  .why-grid {
-    grid-template-columns: repeat(2, 1fr);
+  .why-split-container {
+    flex-direction: column;
+  }
+
+  .why-image-inner {
+    min-height: 400px;
+  }
+
+  .why-intro {
+    max-width: 100%;
+  }
+
+  .why-image-wrapper .why-experience-badge {
+    right: auto;
+    left: 2rem;
+    bottom: 2rem;
   }
 }
 
 @media (max-width: 576px) {
-  .why-grid {
+  .why-mini-grid {
     grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .why-image-inner {
+    min-height: 300px;
+  }
+
+  .why-image-wrapper .why-experience-badge {
+    left: 1rem;
+    bottom: 1rem;
+    padding: 1rem 1.5rem;
+  }
+
+  .badge-years {
+    font-size: 2.5rem;
   }
 }

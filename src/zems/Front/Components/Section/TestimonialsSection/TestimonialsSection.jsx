@@ -1,11 +1,6 @@
 import React, { useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import {
-  Pagination,
-  Autoplay,
-  Navigation,
-  EffectCreative,
-} from "swiper/modules";
+import { Pagination, Autoplay, Navigation } from "swiper/modules";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 import TestimonialCard from "../../../../../components/Widget/TestimonialCard/TestimonialCard";
 import "./TestimonialsSection.css";
@@ -13,7 +8,6 @@ import "./TestimonialsSection.css";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import "swiper/css/effect-creative";
 
 const testimonials = [
   {
@@ -43,65 +37,59 @@ const testimonials = [
       "https://images.unsplash.com/photo-1554151228-14d9def656ec?q=80&w=200&auto=format&fit=crop",
     rating: 5,
   },
+  {
+    id: 4,
+    text: "From the moment I walked in, I felt cared for. The staff is incredibly friendly and the wait times are almost non-existent. Highly recommended!",
+    name: "Michael Chen",
+    role: "New Patient",
+    avatar:
+      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=200&auto=format&fit=crop",
+    rating: 5,
+  },
 ];
 
 function TestimonialsSection() {
   const swiperRef = useRef(null);
 
   return (
-    <section className="premium-testimonials section-padding bg-white relative overflow-hidden">
+    <section className="premium-testimonials section-padding bg-light relative overflow-hidden">
       {/* Background Decor */}
       <div className="testimonial-bg-blob"></div>
 
-      <div className="container relative z-10 flex flex-wrap align-center">
-        {/* Left Side: Sticky Premium Header */}
-        <div className="testimonial-header-col pr-4">
-          <span className="sub-title flex align-center gap-1 mb-2">
-            <span className="title-line"></span> Patient Stories
+      <div className="container relative z-10">
+        {/* Centered Header Row */}
+        <div className="testimonial-header mb-5 text-center">
+          <span className="sub-title flex align-center justify-center gap-1 mx-auto">
+            Patient Stories
           </span>
-          <h2 className="premium-title text-primary mb-3">
+          <h2 className="premium-title text-primary m-0 mb-3">
             Trusted by Thousands of Happy Patients
           </h2>
-          <p className="text-muted mb-4">
+          <p className="testimonial-intro-text text-muted mx-auto m-0">
             Our commitment to excellence translates into real stories of
-            recovery, comfort, and exceptional care.
+            recovery, comfort, and exceptional care from people just like you.
           </p>
-
-          {/* Custom Interactive Navigation */}
-          <div className="testimonial-custom-nav flex gap-1">
-            <button
-              className="test-nav-btn test-prev flex-center"
-              onClick={() => swiperRef.current?.slidePrev()}
-            >
-              <FiChevronLeft size={20} />
-            </button>
-            <button
-              className="test-nav-btn test-next flex-center"
-              onClick={() => swiperRef.current?.slideNext()}
-            >
-              <FiChevronRight size={20} />
-            </button>
-          </div>
         </div>
 
-        {/* Right Side: Creative Slider */}
-        <div className="testimonial-slider-col">
+        {/* Carousel & Custom Nav Container */}
+        <div className="testimonial-carousel-wrapper">
           <Swiper
             onSwiper={(swiper) => {
               swiperRef.current = swiper;
             }}
-            modules={[Autoplay, Navigation, Pagination, EffectCreative]}
-            effect="creative"
-            creativeEffect={{
-              prev: { shadow: true, translate: [0, 0, -400] },
-              next: { translate: ["100%", 0, 0] },
+            modules={[Autoplay, Navigation, Pagination]}
+            spaceBetween={30}
+            slidesPerView={1}
+            breakpoints={{
+              768: {
+                slidesPerView: 2,
+              },
             }}
             grabCursor={true}
             allowTouchMove={true}
             loop={true}
             autoplay={{ delay: 5000, disableOnInteraction: false }}
-            pagination={{ clickable: true, el: ".test-pagination-custom" }}
-            className="premium-testimonial-swiper"
+            className="premium-testimonial-swiper pb-4"
           >
             {testimonials.map((testimonial) => (
               <SwiperSlide key={testimonial.id}>
@@ -110,7 +98,24 @@ function TestimonialsSection() {
             ))}
           </Swiper>
 
-          <div className="test-pagination-custom mt-3 flex justify-center gap-1"></div>
+          {/* Footer controls: Pagination (Center) and Navigation (Sides) */}
+          <div className="testimonial-controls flex align-center justify-between mt-4">
+            <button
+              className="test-nav-btn test-prev flex-center"
+              onClick={() => swiperRef.current?.slidePrev()}
+            >
+              <FiChevronLeft size={22} />
+            </button>
+
+            <div className="test-pagination-custom flex justify-center gap-1"></div>
+
+            <button
+              className="test-nav-btn test-next flex-center"
+              onClick={() => swiperRef.current?.slideNext()}
+            >
+              <FiChevronRight size={22} />
+            </button>
+          </div>
         </div>
       </div>
     </section>
