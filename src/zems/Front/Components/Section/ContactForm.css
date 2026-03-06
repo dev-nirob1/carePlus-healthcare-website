@@ -1,0 +1,9 @@
+.contact-form-container {
+  background: var(--white-color);
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+.contact-form-container textarea {
+  background: var(--white-color) !important;
+}

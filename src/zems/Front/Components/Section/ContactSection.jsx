@@ -6,9 +6,15 @@ import "./ContactSection.css";
 function ContactSection() {
   return (
     <section className="contact-section">
-      <div className="contact-container">
-        <ContactInfo />
-        <ContactForm />
+      <div className="container">
+        <div className="large-6 gap-2">
+          <div className="large-span-2">
+            <ContactInfo />
+          </div>
+          <div className="large-span-4">
+            <ContactForm />
+          </div>
+        </div>
       </div>
     </section>
   );

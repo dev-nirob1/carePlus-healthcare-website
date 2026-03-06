@@ -1,4 +1,10 @@
 import React, { useState } from "react";
+import "./ContactForm.css";
+import InputField from "../../../../components/Element/InputField";
+import BaseTextArea from "../../../../components/Element/BaseTextArea";
+import BaseButton from "../../../../components/Element/BaseButton";
+import BaseParagraph from "../../../../components/Element/BaseParagraph";
+import BaseTitle from "../../../../components/Element/BaseTitle";
 import { FaPaperPlane } from "react-icons/fa";
 
 function ContactForm() {
@@ -21,30 +27,32 @@ function ContactForm() {
   };
 
   return (
-    <div className="contact-form-wrapper">
-      <h2>Send us a Message</h2>
-      <p>Fill out the form below and we'll be in touch shortly.</p>
-
+    <div className="contact-form-container">
       <form className="contact-form" onSubmit={handleSubmit}>
-        <div className="form-row">
-          <div className="form-group">
+        <div className="mb-1">
+          <BaseTitle>Send us a Message</BaseTitle>
+          <BaseParagraph>
+            Fill out the form below and we'll be in touch shortly.
+          </BaseParagraph>
+        </div>
+
+        <div className="medium-2 medium-gap-1">
+          <div>
             <label>Your Name</label>
-            <input
+            <InputField
               type="text"
               name="name"
-              className="form-input"
               placeholder="John Doe"
               required
               value={formData.name}
               onChange={handleChange}
             />
           </div>
-          <div className="form-group">
+          <div>
             <label>Your Email</label>
-            <input
+            <InputField
               type="email"
               name="email"
-              className="form-input"
               placeholder="john@example.com"
               required
               value={formData.email}
@@ -52,32 +60,44 @@ function ContactForm() {
             />
           </div>
         </div>
-        <div className="form-group">
+
+        <div>
           <label>Subject</label>
-          <input
+          <InputField
             type="text"
             name="subject"
-            className="form-input"
             placeholder="How can we help?"
             required
             value={formData.subject}
             onChange={handleChange}
           />
         </div>
-        <div className="form-group">
+
+        <div>
           <label>Message</label>
-          <textarea
+          <BaseTextArea
             name="message"
-            className="form-textarea"
+            className="form-input"
             placeholder="Write your message here..."
             required
             value={formData.message}
             onChange={handleChange}
-          ></textarea>
+            rows={5}
+            style={{
+              width: "100%",
+              padding: "0.75rem",
+              borderRadius: "0.5rem",
+              border: "1px solid #e2e8f0",
+              backgroundColor: "#f8fafc",
+              transition: "all 0.3s ease",
+              fontSize: "1rem",
+            }}
+          ></BaseTextArea>
         </div>
-        <button type="submit" className="send-btn">
-          Send Message <FaPaperPlane />
-        </button>
+
+        <BaseButton className="bg-primary width-full mt-1" type="submit">
+          Send Message <FaPaperPlane style={{ marginLeft: "0.5rem" }} />
+        </BaseButton>
       </form>
     </div>
   );

@@ -83,7 +83,7 @@ function Footer() {
         </div>
       </div>
 
-      <div className="footer-bottom mt-4">
+      <div className="footer-bottom">
         <div className="container">
           <BaseParagraph className="text-center">
             &copy; {new Date().getFullYear()} CarePlus Clinic. All rights
