@@ -1,34 +1,4 @@
-.services-list-section {
-  padding: 6rem 1rem;
-  background-color: #f8fafc;
-}
-
-.services-list-container {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.service-item {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
-  align-items: center;
-  margin-bottom: 6rem;
-}
-
-.service-item:last-child {
-  margin-bottom: 0;
-}
-
-.service-item.reverse {
-  direction: rtl; /* Quick way to swap columns visually */
-}
-
-/* Reset direction for text content inside reverse layout */
-.service-item.reverse .service-content,
-.service-item.reverse .service-image-wrapper {
-  direction: ltr;
-}
+/* ServicesList Visual Styles (Layout handled by global grid.css) */
 
 .service-image-wrapper {
   position: relative;
@@ -67,26 +37,9 @@
   margin-bottom: 1.5rem;
 }
 
-.service-content h2 {
-  font-size: 2.25rem;
-  color: #0f172a;
-  margin-bottom: 1rem;
-  font-weight: 800;
-}
-
-.service-content p {
-  color: #64748b;
-  font-size: 1.1rem;
-  line-height: 1.7;
-  margin-bottom: 2rem;
-}
-
 .service-features {
   list-style: none;
   padding: 0;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
 }
 
 .service-features li {
@@ -94,6 +47,7 @@
   padding-left: 1.5rem;
   color: #334155;
   font-weight: 500;
+  margin-bottom: 0.5rem;
 }
 
 .service-features li::before {
@@ -111,7 +65,6 @@
   color: #0ea5e9;
   text-decoration: none;
   font-weight: 700;
-  margin-top: 1.5rem;
   transition: all 0.3s ease;
   width: fit-content;
 }
@@ -122,24 +75,7 @@
 }
 
 @media (max-width: 1024px) {
-  .service-item {
-    grid-template-columns: 1fr;
-    gap: 3rem;
-    margin-bottom: 4rem;
-  }
-
-  .service-item.reverse {
-    direction: ltr;
-  }
-
   .service-image-wrapper {
     height: 300px;
-    order: -1; /* Ensure image is always on top on mobile */
-  }
-}
-
-@media (max-width: 640px) {
-  .service-features {
-    grid-template-columns: 1fr;
   }
 }

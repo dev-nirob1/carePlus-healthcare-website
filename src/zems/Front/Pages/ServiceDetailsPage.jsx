@@ -3,7 +3,7 @@ import { useParams, Link } from "react-router-dom";
 import { FaArrowLeft, FaCalendarCheck } from "react-icons/fa";
 import { servicesData } from "../../../data/servicesData";
 import PageHero from "../Components/Widget/PageHero";
-import "../Components/Section/ServiceDetails.css";
+import "../Components/Section/ServiceDetails/ServiceDetails.css";
 
 function ServiceDetailsPage() {
   const { slug } = useParams();

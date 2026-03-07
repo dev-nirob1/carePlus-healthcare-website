@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import "./ContactForm.css";
-import InputField from "../../../../components/Element/InputField";
-import BaseTextArea from "../../../../components/Element/BaseTextArea";
-import BaseButton from "../../../../components/Element/BaseButton";
-import BaseParagraph from "../../../../components/Element/BaseParagraph";
-import BaseTitle from "../../../../components/Element/BaseTitle";
+import InputField from "../../../../../components/Element/InputField";
+import BaseTextArea from "../../../../../components/Element/BaseTextArea";
+import BaseButton from "../../../../../components/Element/BaseButton";
+import BaseParagraph from "../../../../../components/Element/BaseParagraph";
+import BaseTitle from "../../../../../components/Element/BaseTitle";
 import { FaPaperPlane } from "react-icons/fa";
 
 function ContactForm() {

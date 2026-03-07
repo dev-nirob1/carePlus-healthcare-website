@@ -1,6 +1,6 @@
 import React from "react";
-import ContactInfo from "./ContactInfo";
-import ContactForm from "./ContactForm";
+import ContactInfo from "../ContactInfo/ContactInfo";
+import ContactForm from "../ContactForm/ContactForm";
 import "./ContactSection.css";
 
 function ContactSection() {

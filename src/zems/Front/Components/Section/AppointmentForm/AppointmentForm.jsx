@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import "./AppointmentForm.css";
-import InputField from "../../../../components/Element/InputField";
-import SelectDropdown from "../../../../components/Element/SelectDropdown";
-import BaseButton from "../../../../components/Element/BaseButton";
-import BaseParagraph from "../../../../components/Element/BaseParagraph";
-import BaseTitle from "../../../../components/Element/BaseTitle";
+import InputField from "../../../../../components/Element/InputField";
+import SelectDropdown from "../../../../../components/Element/SelectDropdown";
+import BaseButton from "../../../../../components/Element/BaseButton";
+import BaseParagraph from "../../../../../components/Element/BaseParagraph";
+import BaseTitle from "../../../../../components/Element/BaseTitle";
 
 function AppointmentForm() {
   const [formData, setFormData] = useState({

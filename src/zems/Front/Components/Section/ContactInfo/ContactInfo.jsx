@@ -5,8 +5,8 @@ import {
   FaMapMarkerAlt,
   FaClock,
 } from "react-icons/fa";
-import SubTitle from "../../../../components/Element/SubTitle";
-import BaseParagraph from "../../../../components/Element/BaseParagraph";
+import SubTitle from "../../../../../components/Element/SubTitle";
+import BaseParagraph from "../../../../../components/Element/BaseParagraph";
 
 function ContactInfo() {
   return (

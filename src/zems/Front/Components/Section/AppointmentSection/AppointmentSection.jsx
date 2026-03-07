@@ -1,6 +1,6 @@
 import React from "react";
-import AppointmentForm from "./AppointmentForm";
-import AppointmentHelper from "./AppointmentHelper";
+import AppointmentForm from "../AppointmentForm/AppointmentForm";
+import AppointmentHelper from "../AppointmentHelper/AppointmentHelper";
 import "./AppointmentSection.css";
 
 function AppointmentSection() {

@@ -1,7 +1,7 @@
 import { FaPhoneAlt, FaClock, FaMapMarkerAlt } from "react-icons/fa";
-import SubTitle from "../../../../components/Element/SubTitle";
-import ListItem from "../../../../components/Element/ListItem";
-import BaseParagraph from "../../../../components/Element/BaseParagraph";
+import SubTitle from "../../../../../components/Element/SubTitle";
+import ListItem from "../../../../../components/Element/ListItem";
+import BaseParagraph from "../../../../../components/Element/BaseParagraph";
 
 function AppointmentHelper() {
   return (

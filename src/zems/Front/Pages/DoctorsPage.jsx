@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import PageHero from "../Components/Widget/PageHero";
-import DoctorsGrid from "../Components/Section/DoctorsGrid";
+import DoctorsGrid from "../Components/Section/DoctorsGrid/DoctorsGrid";
 
 function DoctorsPage() {
   useEffect(() => {

@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import PageHero from "../Components/Widget/PageHero";
-import AppointmentSection from "../Components/Section/AppointmentSection";
+import AppointmentSection from "../Components/Section/AppointmentSection/AppointmentSection";
 
 function AppointmentsPage() {
   useEffect(() => {

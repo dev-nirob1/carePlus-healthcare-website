@@ -1,5 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import BaseTitle from "../../../../../components/Element/BaseTitle";
+import BaseParagraph from "../../../../../components/Element/BaseParagraph";
 import "./ServiceCTA.css";
 
 function ServiceCTA() {
@@ -7,12 +9,12 @@ function ServiceCTA() {
     <section className="service-cta-section">
       <div className="service-cta-container">
         <div className="service-cta-content">
-          <h2>Need Specialized Care?</h2>
-          <p>
+          <BaseTitle>Need Specialized Care?</BaseTitle>
+          <BaseParagraph>
             Our expert team is ready to provide you with the best medical
             treatment. Book an appointment today and take the first step towards
             better health.
-          </p>
+          </BaseParagraph>
           <Link to="/appointments" className="cta-btn-large">
             Book an Appointment
           </Link>

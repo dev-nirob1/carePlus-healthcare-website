@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import PageHero from "../Components/Widget/PageHero";
-import ServicesList from "../Components/Section/ServicesList";
-import ServiceCTA from "../Components/Section/ServiceCTA";
+import ServicesList from "../Components/Section/ServicesList/ServicesList";
+import ServiceCTA from "../Components/Section/ServiceCTA/ServiceCTA";
 
 function ServicesPage() {
   useEffect(() => {

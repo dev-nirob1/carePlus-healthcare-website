@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import PageHero from "../Components/Widget/PageHero";
-import ContactSection from "../Components/Section/ContactSection";
+import ContactSection from "../Components/Section/ContactSection/ContactSection";
 
 function ContactPage() {
   useEffect(() => {
